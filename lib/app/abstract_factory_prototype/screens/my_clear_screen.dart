@@ -23,7 +23,14 @@ class MyCleanScreen extends StatelessWidget {
                 text: 'Enviar',
                 backgroundColor: Colors.blue,
                 textColor: Colors.white,
-                onPressed: () => print('Enviado!'),
+                onPressed: () => showDialog(
+                  context: context,
+                  builder: (context) => uiFactory.createDialog(
+                    title: 'Error',
+                    content: 'Este es un mensaje de error genérico, sin importar la plataforma.',
+                    actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cerrar'))],
+                  ),
+                ),
               ),
             ],
           ),
