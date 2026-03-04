@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_abstract_factory/app/abstract_factory_prototype/factories/ui_factory.dart';
 
 import '../../interfaces/i_app_button.dart';
 
@@ -13,7 +12,12 @@ class MaterialAppButton extends IAppButton {
   });
 
   @override
-  IAppButton clone({String? text, Color? backgroundColor, Color? textColor, VoidCallback? onPressed}) {
+  IAppButton clone({
+    String? text,
+    Color? backgroundColor,
+    Color? textColor,
+    VoidCallback? onPressed,
+  }) {
     return MaterialAppButton(
       text: text ?? this.text,
       backgroundColor: backgroundColor ?? this.backgroundColor,
@@ -34,4 +38,3 @@ class MaterialAppButton extends IAppButton {
     );
   }
 }
-
